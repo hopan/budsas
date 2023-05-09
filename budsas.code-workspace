@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"workbench.tree.indent": 20,
+		"terminal.explorerKind": "external"
+	}
 }
