@@ -17,13 +17,20 @@ def update_file_footer(file_path):
         file_content = file_content[1:]
     
     if file_content.startswith("<html"):
-        pass
-    
-    elif file_content.startswith("<HTML"):
-        # Replace 
-        file_content = file_content.replace('<HTML>', '<html>')
-        file_content = file_content.replace('</HTML>', '</html>')
-        utils.write_file(file_path, file_content)
+        error = False
+        if file_content.find("<body") != -1:
+            if file_content.find("</body>") == -1:
+                error = True
+        
+        elif file_content.find("<BODY") != -1:
+            error = True
+        
+        else:
+            error = True
+        
+        if error:
+            print(file_path)
+            print(file_content[0:10].encode())
     
     else:
         print(file_path)
