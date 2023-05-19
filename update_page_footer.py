@@ -20,17 +20,10 @@ def update_file_footer(file_path):
         pass
     
     elif file_content.startswith("<HTML"):
-        pass
-    
-    elif file_content.startswith("<!DOCTYPE"):
-        print(file_path)
-        print(file_content[0:10].encode())
-        pass
-    
-    elif file_content.startswith("<!doctype"):
-        print(file_path)
-        print(file_content[0:10].encode())
-        pass
+        # Replace 
+        file_content = file_content.replace('<HTML>', '<html>')
+        file_content = file_content.replace('</HTML>', '</html>')
+        utils.write_file(file_path, file_content)
     
     else:
         print(file_path)
