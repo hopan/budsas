@@ -22,16 +22,14 @@ def update_file_footer(file_path):
     elif file_content.startswith("<HTML"):
         pass
     
-    elif file_content.startswith("<HEAD>"):
-        pass
-    
-    elif file_content.startswith("<head>"):
-        pass
-    
     elif file_content.startswith("<!DOCTYPE"):
+        print(file_path)
+        print(file_content[0:10].encode())
         pass
     
     elif file_content.startswith("<!doctype"):
+        print(file_path)
+        print(file_content[0:10].encode())
         pass
     
     else:
